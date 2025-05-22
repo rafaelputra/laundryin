@@ -10,6 +10,7 @@ import Model.Homepage;
 import Model.TabelHomepage;
 import View.FormLaundryin;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,5 +32,24 @@ public class ControllerHomepage
             lb = implHomepage.getAll();
             TabelHomepage th = new TabelHomepage(lb);
             frame.getTabelData().setModel(th);
+        }
+        
+        public void isiTableCariId(){
+            lb=implHomepage.getCariId(Integer.parseInt(frame.gettextfield_cari().getText()));
+            TabelHomepage th =new TabelHomepage(lb);
+            frame.getTabelData().setModel(th);
+            frame.getTabelData().setModel(th);
+        }
+        
+        public void cariId(){
+            String input = frame.gettextfield_cari().getText().trim();
+
+            if (!input.isEmpty()) {
+                            int id = Integer.parseInt(input);
+                             implHomepage.getCariId(id);  // Pastikan getCariId menerima int
+                            isiTableCariId();
+            } else{
+                JOptionPane.showMessageDialog(frame,"Silahkan Pilih Data");
+            }
         }
     }

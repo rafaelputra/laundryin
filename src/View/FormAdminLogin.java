@@ -152,6 +152,9 @@ public class FormAdminLogin extends javax.swing.JFrame
 
     private void btn_submit_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submit_adminActionPerformed
         // TODO add your handling code here:
+         FormPageAdmin formAdmin = new FormPageAdmin();
+        formAdmin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_submit_adminActionPerformed
 
     /**
