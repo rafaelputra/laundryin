@@ -25,7 +25,7 @@ public class DAO implements ILaundryin
     {
         Connection connection;
         final String select = "SELECT p.id, p.tgl_masuk, p.tgl_keluar, p.berat, p.harga, p.status_pesanan, p.status_antar, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id;";
-        final String cariId = "SELECT * FROM pesanan where id like ?";
+        final String cariId = "SELECT p.*, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id LIKE ?";
         
         public DAO(){
             connection = KoneksiDB.getConnection();
@@ -55,12 +55,12 @@ public class DAO implements ILaundryin
             return lb;
         }
             
-        public List<Homepage> getCariId(String nama){
+        public List<Homepage> getCariId(int id){
             List<Homepage> lb = null;
             try{
                 lb = new ArrayList<Homepage>();
                 PreparedStatement st = connection.prepareStatement(cariId);
-                st.setString(1, "%" + nama + "%");
+                st.setInt(1,id);
                 ResultSet rs = st.executeQuery();
                 while (rs.next()){
                     Homepage b = new Homepage();

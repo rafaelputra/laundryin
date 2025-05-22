@@ -6,6 +6,7 @@ package View;
 
 import Controller.ControllerHomepage;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -74,6 +75,11 @@ public class FormLaundryin extends javax.swing.JFrame
         jLabel2.setText("Cari");
 
         btn_cari.setText("Cari");
+        btn_cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cariActionPerformed(evt);
+            }
+        });
 
         tabel_homepage.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,8 +162,8 @@ public class FormLaundryin extends javax.swing.JFrame
 
     private void btn_login_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_adminActionPerformed
         // TODO add your handling code here:
-        FormAdminLogin formAdmin = new FormAdminLogin();
-        formAdmin.setVisible(true);
+        FormAdminLogin formloginAdmin = new FormAdminLogin();
+        formloginAdmin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_login_adminActionPerformed
 
@@ -167,8 +173,17 @@ public class FormLaundryin extends javax.swing.JFrame
 
     private void textfield_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_cariActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_textfield_cariActionPerformed
 
+    private void btn_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cariActionPerformed
+        // TODO add your handling code here:
+        ch.cariId();
+    }//GEN-LAST:event_btn_cariActionPerformed
+
+    public JTextField gettextfield_cari(){
+        return textfield_cari;
+    }
     /**
      * @param args the command line arguments
      */

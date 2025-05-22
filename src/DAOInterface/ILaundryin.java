@@ -14,5 +14,5 @@ import java.util.List;
 public interface ILaundryin
     {
         public List<Homepage> getAll();
-        public List<Homepage> getCariId(String nama);
+        public List<Homepage> getCariId(int id);
     }
