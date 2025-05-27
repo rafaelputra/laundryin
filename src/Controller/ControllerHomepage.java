@@ -38,7 +38,6 @@ public class ControllerHomepage
             lb=implHomepage.getCariId(Integer.parseInt(frame.gettextfield_cari().getText()));
             TabelHomepage th =new TabelHomepage(lb);
             frame.getTabelData().setModel(th);
-            frame.getTabelData().setModel(th);
         }
         
         public void cariId(){
@@ -46,7 +45,7 @@ public class ControllerHomepage
 
             if (!input.isEmpty()) {
                             int id = Integer.parseInt(input);
-                             implHomepage.getCariId(id);  // Pastikan getCariId menerima int
+                             implHomepage.getCariId(id); 
                             isiTableCariId();
             } else{
                 JOptionPane.showMessageDialog(frame,"Silahkan Pilih Data");
