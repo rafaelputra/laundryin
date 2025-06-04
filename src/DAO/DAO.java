@@ -30,7 +30,7 @@ public class DAO implements ILaundryin, IDriver
         final String cariId = "SELECT p.*, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id LIKE ?";
         final String DRLogin ="SELECT * FROM driver WHERE nama = ? AND password = ?";
         final String SelectbyDR = "SELECT p.id, p.tgl_masuk, p.tgl_keluar, p.berat, p.harga, p.status_pesanan, p.status_antar, p.alamat, p.no_hp, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE d.nama = ?;";
-
+        final String admLogin ="SELECT * FROM admin WHERE username = ? AND password = ?";
 
         
         public DAO(){
@@ -85,6 +85,7 @@ public class DAO implements ILaundryin, IDriver
             }
             return lb;
         }
+        
         public boolean cekLogin(String username, String password) {
             boolean loginBerhasil = false;
             try {
@@ -102,7 +103,8 @@ public class DAO implements ILaundryin, IDriver
             }
             return loginBerhasil;
         }
-    public List<Driverpage> getAllJob(String username) {
+        
+        public List<Driverpage> getAllJob(String username) {
                     List<Driverpage> list = new ArrayList<>();
            try {
                PreparedStatement stmt = connection.prepareStatement(SelectbyDR);
@@ -132,6 +134,24 @@ public class DAO implements ILaundryin, IDriver
            }
            return list;
            }
+        
+        public boolean admLogin (String username, String password) {
+            boolean loginBerhasil = false;
+            try {
+                PreparedStatement stmt = connection.prepareStatement(admLogin);
+                stmt.setString(1, username);
+                stmt.setString(2, password);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    loginBerhasil = true;
+                }
+                rs.close();
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return loginBerhasil;
+        }
 
 
     }
