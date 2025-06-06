@@ -4,6 +4,9 @@
  */
 package View;
 
+import DAO.DAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rafaelputra
@@ -16,6 +19,7 @@ public class FormAdminLogin extends javax.swing.JFrame
      */
     public FormAdminLogin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,8 +37,8 @@ public class FormAdminLogin extends javax.swing.JFrame
         jLabel3 = new javax.swing.JLabel();
         textarea_username = new javax.swing.JTextField();
         btn_submit_admin = new javax.swing.JButton();
-        textarea_password = new javax.swing.JTextField();
         btn_logout_form_admin = new javax.swing.JButton();
+        textarea_password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,16 +64,16 @@ public class FormAdminLogin extends javax.swing.JFrame
             }
         });
 
-        textarea_password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textarea_passwordActionPerformed(evt);
-            }
-        });
-
         btn_logout_form_admin.setText("Kembali ke Homepage");
         btn_logout_form_admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_logout_form_adminActionPerformed(evt);
+            }
+        });
+
+        textarea_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textarea_passwordActionPerformed(evt);
             }
         });
 
@@ -93,13 +97,13 @@ public class FormAdminLogin extends javax.swing.JFrame
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textarea_password, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textarea_username, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textarea_username, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                    .addComponent(textarea_password)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btn_logout_form_admin)))
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +122,7 @@ public class FormAdminLogin extends javax.swing.JFrame
                     .addComponent(textarea_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(btn_submit_admin)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,10 +143,6 @@ public class FormAdminLogin extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_textarea_usernameActionPerformed
 
-    private void textarea_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textarea_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textarea_passwordActionPerformed
-
     private void btn_logout_form_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logout_form_adminActionPerformed
         // TODO add your handling code here:
         FormLaundryin formHomepage = new FormLaundryin();
@@ -152,10 +152,24 @@ public class FormAdminLogin extends javax.swing.JFrame
 
     private void btn_submit_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submit_adminActionPerformed
         // TODO add your handling code here:
-         FormPageAdmin formAdmin = new FormPageAdmin();
-        formAdmin.setVisible(true);
-        this.dispose();
+          String username = textarea_username.getText().trim();
+          String password = new String(textarea_password.getPassword());
+          
+          DAO dao =new DAO();
+          boolean berhasil = dao.admLogin(username, password);
+          
+          if(berhasil){
+              FormPageAdmin PageAdmin = new FormPageAdmin();
+              PageAdmin.setVisible(true);
+              this.dispose();
+          }else{
+              JOptionPane.showMessageDialog(this, "Username atau Password salah");
+          }
     }//GEN-LAST:event_btn_submit_adminActionPerformed
+
+    private void textarea_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textarea_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textarea_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,7 +215,7 @@ public class FormAdminLogin extends javax.swing.JFrame
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textarea_password;
+    private javax.swing.JPasswordField textarea_password;
     private javax.swing.JTextField textarea_username;
     // End of variables declaration//GEN-END:variables
     }
