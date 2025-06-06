@@ -163,7 +163,7 @@ public class FormLaundryin extends javax.swing.JFrame
 
     private void btn_login_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_adminActionPerformed
         // TODO add your handling code here:
-        FormAdminLogin formloginAdmin = new FormAdminLogin();
+        FormLoginAdmin formloginAdmin = new FormLoginAdmin();
         formloginAdmin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_login_adminActionPerformed

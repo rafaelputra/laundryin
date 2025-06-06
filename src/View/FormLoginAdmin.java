@@ -11,13 +11,13 @@ import javax.swing.JOptionPane;
  *
  * @author rafaelputra
  */
-public class FormAdminLogin extends javax.swing.JFrame
+public class FormLoginAdmin extends javax.swing.JFrame
     {
 
     /**
      * Creates new form FormAdmin
      */
-    public FormAdminLogin() {
+    public FormLoginAdmin() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -152,19 +152,10 @@ public class FormAdminLogin extends javax.swing.JFrame
 
     private void btn_submit_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submit_adminActionPerformed
         // TODO add your handling code here:
-          String username = textarea_username.getText().trim();
-          String password = new String(textarea_password.getPassword());
-          
-          DAO dao =new DAO();
-          boolean berhasil = dao.admLogin(username, password);
-          
-          if(berhasil){
-              FormPageAdmin PageAdmin = new FormPageAdmin();
-              PageAdmin.setVisible(true);
-              this.dispose();
-          }else{
-              JOptionPane.showMessageDialog(this, "Username atau Password salah");
-          }
+        FormAdminPage formAdmin = new FormAdminPage();
+        formAdmin.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btn_submit_adminActionPerformed
 
     private void textarea_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textarea_passwordActionPerformed
@@ -188,14 +179,16 @@ public class FormAdminLogin extends javax.swing.JFrame
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormAdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormAdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormAdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormAdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -203,7 +196,7 @@ public class FormAdminLogin extends javax.swing.JFrame
         java.awt.EventQueue.invokeLater(new Runnable()
             {
             public void run() {
-                new FormAdminLogin().setVisible(true);
+                new FormLoginAdmin().setVisible(true);
             }
             });
     }

@@ -6,6 +6,7 @@ package laundryin;
 
 import Helper.KoneksiDB;
 import View.FormLaundryin;
+import View.FormAdminPage;
 import javax.swing.SwingUtilities;
 
 /**
@@ -21,8 +22,9 @@ public class Laundryin
     public static void main(String[] args) {
         // TODO code application logic here
         KoneksiDB.getConnection();
+        
         SwingUtilities.invokeLater(() -> {
-            FormLaundryin form = new FormLaundryin();
+            FormAdminPage form = new FormAdminPage();
             form.setVisible(true);
             form.setLocationRelativeTo(null);
         });
