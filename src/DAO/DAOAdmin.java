@@ -32,6 +32,7 @@ public class DAOAdmin implements IAdmin
     final String ALogin ="SELECT * FROM admin WHERE username = ? AND password = ?";
     final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
     final String getAllDriver = "SELECT id, nama FROM driver";
+    final String delete = "DELETE FROM pesanan WHERE id=? ;";
     
     public DAOAdmin(){
         connection = KoneksiDB.getConnection();
@@ -198,4 +199,23 @@ public void insert(Adminpage b){
             }
             return loginBerhasil;
         }
+        
+                public void delete(int id){
+            PreparedStatement statement = null;
+            try{
+                statement = connection.prepareStatement(delete);
+                
+                statement.setInt(1, id);
+                statement.executeUpdate();
+            } catch (SQLException ex){
+                System.out.println("Berhasil Delete");
+            } finally {
+                try{
+                    statement.close();
+                } catch (SQLException ex){
+                    System.out.println("Gagal Update");
+                }
+            }
+        }
+        
     }

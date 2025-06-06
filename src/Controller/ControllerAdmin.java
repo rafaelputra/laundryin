@@ -149,4 +149,14 @@ public class ControllerAdmin
                     JOptionPane.showMessageDialog(frame, "Pilih data yang akan di ubah");
                 }
             }
+    
+            public void delete(){
+            if (!frame.getTextfield_id().getText().trim().isEmpty()){
+                int id = Integer.parseInt(frame.getTextfield_id().getText());
+                implAdmin.delete(id);
+                JOptionPane.showMessageDialog(null, "Hapus data sukses");
+            } else {
+                JOptionPane.showMessageDialog(frame, "Pilih data yang akan dihapus");
+            }
+        }
     }
