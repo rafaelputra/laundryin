@@ -5,6 +5,7 @@
 package View;
 
 import DAO.DAO;
+import DAO.DAOAdmin;
 import javax.swing.JOptionPane;
 
 /**
@@ -152,10 +153,20 @@ public class FormLoginAdmin extends javax.swing.JFrame
 
     private void btn_submit_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submit_adminActionPerformed
         // TODO add your handling code here:
-        FormAdminPage formAdmin = new FormAdminPage();
-        formAdmin.setVisible(true);
-        this.dispose();
-
+        // TODO add your handling code here:
+        String username = textarea_username.getText().trim();
+        String password = new String(textarea_password.getPassword());
+          
+        DAOAdmin dao = new DAOAdmin();
+        boolean berhasil = dao.cekLogin(username, password);
+          
+        if(berhasil){
+              FormAdminPage pageadmin = new FormAdminPage();
+              pageadmin.setVisible(true);
+              this.dispose();
+        }else{
+              JOptionPane.showMessageDialog(this, "Username atau Password salah");
+          }
     }//GEN-LAST:event_btn_submit_adminActionPerformed
 
     private void textarea_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textarea_passwordActionPerformed

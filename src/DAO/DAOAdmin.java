@@ -29,6 +29,7 @@ public class DAOAdmin implements IAdmin
     final String select = "SELECT p.id, p.nama, p.alamat, p.no_hp, p.berat, p.harga, p.parfum, p.status_pesanan, p.status_antar, p.driver_id, d.nama AS nama_driver FROM  pesanan AS p LEFT JOIN driver AS d ON p.driver_id = d.id;";
     final String insert = "INSERT INTO pesanan (nama, alamat, no_hp, berat, harga, parfum, status_pesanan, status_antar, driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     final String cariId = "SELECT p.*, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id LIKE ?";
+    final String ALogin ="SELECT * FROM admin WHERE username = ? AND password = ?";
     final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, tgl_masuk=?, tgl_keluar=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
     final String getAllDriver = "SELECT id, nama FROM driver";
     
@@ -175,4 +176,21 @@ public void insert(Adminpage b){
             }
         }
     
+        public boolean cekLogin(String username, String password) {
+            boolean loginBerhasil = false;
+            try {
+                PreparedStatement stmt = connection.prepareStatement(ALogin);
+                stmt.setString(1, username);
+                stmt.setString(2, password);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    loginBerhasil = true;
+                }
+                rs.close();
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return loginBerhasil;
+        }
     }
