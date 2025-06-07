@@ -24,7 +24,7 @@ public class Laundryin
         KoneksiDB.getConnection();
         
         SwingUtilities.invokeLater(() -> {
-            FormAdminPage form = new FormAdminPage();
+            FormLaundryin form = new FormLaundryin();
             form.setVisible(true);
             form.setLocationRelativeTo(null);
         });

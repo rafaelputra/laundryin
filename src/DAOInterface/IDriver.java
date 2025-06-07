@@ -12,5 +12,7 @@ import java.util.List;
  * @author Asus
  */
 public interface IDriver {
-    public List<Driverpage> getAllJob(String Username);
+    public List<Driverpage> getAllJob(String username);
+   public List<Driverpage> getCariId(int id,String username);
+   boolean updateStatus(String id, String status);
 }

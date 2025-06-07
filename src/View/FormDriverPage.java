@@ -4,7 +4,7 @@
  */
 package View;
 import Controller.ControllerDriverpage;
-import DAO.DAO;
+import DAO.DriverDAO;
 import Model.Driverpage;
 import View.FormLaundryin;
 import Model.TabelDriverpage;
@@ -27,12 +27,13 @@ public class FormDriverPage extends javax.swing.JFrame {
         initComponents();
         this.username = username;
 
-        ch = new ControllerDriverpage(this, username); // kalau kamu tetap pakai controller
+        ch = new ControllerDriverpage(this, username);
         loadDriverData();
+        pasangListener();
     }
 
     private void loadDriverData() {
-        DAO dao = new DAO();
+        DriverDAO dao = new DriverDAO();
         List<Driverpage> list = dao.getAllJob(username);
         
         TabelDriverpage model = new TabelDriverpage(list);
@@ -42,6 +43,23 @@ public class FormDriverPage extends javax.swing.JFrame {
     public JTable getTabelData(){
         return tabel_DriverPage;
     }
+   public JTextField gettextfield_cari() {
+    return textfield_cari;
+}
+   private void pasangListener() {
+    tabel_DriverPage.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            int row = tabel_DriverPage.getSelectedRow();
+            if (row != -1) {
+                String id = tabel_DriverPage.getValueAt(row, 0).toString();
+                String status = tabel_DriverPage.getValueAt(row, 5).toString();
+
+                textfield_cari.setText(id);
+                combo_status.setSelectedItem(status);
+            }
+        }
+    });
+}
     /**
      * Creates new form FormLaundryin
      */
@@ -49,7 +67,8 @@ public class FormDriverPage extends javax.swing.JFrame {
         initComponents();
         ch = new ControllerDriverpage(this, username);
         ch.isiTable();
-    }
+        pasangListener();
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,6 +86,9 @@ public class FormDriverPage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel_DriverPage = new javax.swing.JTable();
         btn_logout_form_admin = new javax.swing.JButton();
+        btn_refresh = new javax.swing.JButton();
+        btn_update = new javax.swing.JButton();
+        combo_status = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(622, 441));
@@ -110,6 +132,27 @@ public class FormDriverPage extends javax.swing.JFrame {
             }
         });
 
+        btn_refresh.setText("refresh");
+        btn_refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_refreshActionPerformed(evt);
+            }
+        });
+
+        btn_update.setText("Update");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
+
+        combo_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELESAI", "BELUM", "SUDAH DIAMBIL" }));
+        combo_status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_statusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,34 +160,46 @@ public class FormDriverPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(textfield_cari, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                        .addGap(36, 36, 36)
+                        .addComponent(textfield_cari, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(combo_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
                         .addComponent(btn_cari)
-                        .addGap(95, 95, 95)
-                        .addComponent(btn_logout_form_admin)
-                        .addGap(43, 43, 43))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_update)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(256, 256, 256)
+                        .addComponent(btn_logout_form_admin)))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_logout_form_admin, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(textfield_cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cari)
-                    .addComponent(btn_logout_form_admin))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(237, 237, 237))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_update)
+                        .addComponent(btn_cari)
+                        .addComponent(combo_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_refresh))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_cari)
+                        .addComponent(jLabel2)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(301, 301, 301))
         );
 
         pack();
@@ -166,6 +221,41 @@ public class FormDriverPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_logout_form_adminActionPerformed
 
+    private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
+        ch.isiTable();
+        textfield_cari.setText("");
+    }//GEN-LAST:event_btn_refreshActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        String id = textfield_cari.getText();
+        String status = combo_status.getSelectedItem().toString();
+
+        if (id.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Pilih data dulu dari tabel untuk diupdate!");
+            return;
+        }
+
+        boolean success = ch.updateStatus(id, status);  // panggil controller
+
+        if (success) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Status berhasil diupdate!");
+            ch.isiTable();  // refresh tabel setelah update
+            textfield_cari.setText("");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Update status gagal!");
+        }
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void combo_statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_statusActionPerformed
+
+    public void setStatusCombo(String status) {
+    combo_status.setSelectedItem(status);
+    }
+    public String getSelectedStatus() {
+    return combo_status.getSelectedItem().toString();
+    }
     /**
      * @param args the command line arguments
      */
@@ -204,6 +294,9 @@ public class FormDriverPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cari;
     private javax.swing.JButton btn_logout_form_admin;
+    private javax.swing.JButton btn_refresh;
+    private javax.swing.JButton btn_update;
+    private javax.swing.JComboBox<String> combo_status;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
