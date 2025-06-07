@@ -70,6 +70,10 @@ public class TabelAdmin extends AbstractTableModel
                     return lb.get(row).getAlamat();
                 case 3:
                     return lb.get(row).getNohp();
+                case 4:
+                    return lb.get(row).getTgl_masuk();
+                case 5:
+                    return lb.get(row).getTgl_keluar();
                 case 6:    
                     return lb.get(row).getBerat();
                 case 7:

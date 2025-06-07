@@ -26,11 +26,11 @@ import java.util.logging.Logger;
 public class DAOAdmin implements IAdmin
     {
     Connection connection;
-    final String select = "SELECT p.id, p.nama, p.alamat, p.no_hp, p.berat, p.harga, p.parfum, p.status_pesanan, p.status_antar, p.driver_id, d.nama AS nama_driver FROM  pesanan AS p LEFT JOIN driver AS d ON p.driver_id = d.id;";
-    final String insert = "INSERT INTO pesanan (nama, alamat, no_hp, berat, harga, parfum, status_pesanan, status_antar, driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    final String select = "SELECT p.id, p.nama, p.alamat, p.no_hp, p.tgl_masuk, p.tgl_keluar, p.berat, p.harga, p.parfum, p.status_pesanan, p.status_antar, p.driver_id, d.nama AS nama_driver FROM  pesanan AS p LEFT JOIN driver AS d ON p.driver_id = d.id;";
+    final String insert = "INSERT INTO pesanan (nama, alamat, no_hp, tgl_masuk, tgl_keluar, berat, harga, parfum, status_pesanan, status_antar, driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     final String cariId = "SELECT p.*, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id LIKE ?";
     final String ALogin ="SELECT * FROM admin WHERE username = ? AND password = ?";
-    final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
+    final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, tgl_masuk=?, tgl_keluar=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
     final String getAllDriver = "SELECT id, nama FROM driver";
     final String delete = "DELETE FROM pesanan WHERE id=? ;";
     
@@ -51,6 +51,8 @@ public class DAOAdmin implements IAdmin
                     b.setNama(rs.getString("nama"));
                     b.setAlamat(rs.getString("alamat"));
                     b.setNohp(rs.getString("no_hp"));
+                    b.setTgl_masuk(rs.getString("tgl_masuk"));
+                    b.setTgl_keluar(rs.getString("tgl_keluar"));
                     String strBerat = rs.getString("berat");
                     if (strBerat != null && !strBerat.trim().isEmpty()) {
                         b.setBerat(Float.parseFloat(strBerat));
@@ -75,6 +77,8 @@ public class DAOAdmin implements IAdmin
             return lb;
         }
 
+
+
 public void insert(Adminpage b){
     PreparedStatement statement = null;
     try {
@@ -82,13 +86,18 @@ public void insert(Adminpage b){
         statement.setString(1, b.getNama());
         statement.setString(2, b.getAlamat());
         statement.setString(3, b.getNohp());
-        statement.setFloat(4, b.getBeratAsFloat());
-        statement.setInt(5, b.getHargaAsInteger());
-        statement.setString(6, b.getParfum());
-        statement.setString(7, b.getStatus_pesanan());
-        statement.setString(8, b.getStatus_antar());
-        statement.setInt(9, b.getDriverId());
-
+        statement.setDate(4, b.getSqlDateTglMasuk());
+        statement.setDate(5, b.getSqlDateTglKeluar());
+        statement.setFloat(6, b.getBeratAsFloat());
+        statement.setInt(7, b.getHargaAsInteger());
+        statement.setString(8, b.getParfum());
+        statement.setString(9, b.getStatus_pesanan());
+        statement.setString(10, b.getStatus_antar());
+        if (b.getDriverId() == null) {
+            statement.setNull(11, java.sql.Types.INTEGER);
+        } else {
+            statement.setInt(11, b.getDriverId());
+        }
         statement.executeUpdate();
         ResultSet rs = statement.getGeneratedKeys();
         while (rs.next()){
@@ -107,6 +116,7 @@ public void insert(Adminpage b){
         }
     }
 }
+
     
     public Map<String, Integer> getDriverNameIdMap() {
         Map<String, Integer> driverMap = new HashMap<>();
@@ -156,14 +166,19 @@ public void insert(Adminpage b){
         statement.setString(1, b.getNama());
         statement.setString(2, b.getAlamat());
         statement.setString(3, b.getNohp());
-        statement.setFloat(4, b.getBeratAsFloat());
-        statement.setInt(5, b.getHargaAsInteger());
-        statement.setString(6, b.getParfum());
-        statement.setString(7, b.getStatus_pesanan());
-        statement.setString(8, b.getStatus_antar());
-        statement.setInt(9, b.getDriverId());
-        statement.setInt(10, b.getId());
-
+        statement.setDate(4, b.getSqlDateTglMasuk());
+        statement.setDate(5, b.getSqlDateTglKeluar());
+        statement.setFloat(6, b.getBeratAsFloat());
+        statement.setInt(7, b.getHargaAsInteger());
+        statement.setString(8, b.getParfum());
+        statement.setString(9, b.getStatus_pesanan());
+        statement.setString(10, b.getStatus_antar());
+        if (b.getDriverId() == null) {
+            statement.setNull(11, java.sql.Types.INTEGER);
+        } else {
+            statement.setInt(11, b.getDriverId());
+        }
+        statement.setInt(12, b.getId());
         int affectedRows = statement.executeUpdate();
         if (affectedRows > 0) {
             System.out.println("Berhasil update");

@@ -5,15 +5,11 @@ import DAOInterface.IAdmin;
 import Model.Adminpage;
 import Model.TabelAdmin;
 import View.FormAdminPage;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -44,9 +40,14 @@ public class ControllerAdmin
         frame.getTextfield_nama().setText("");
         frame.getTextfield_alamat().setText("");
         frame.getTextfield_nohp().setText("");
+        frame.getTextfield_tglmasuk().setDate(new Date());
+        frame.getTextfield_tglkeluar().setDate(new Date());
         frame.getTextfield_berat().setText("");
         frame.getTextfield_harga().setText("");
         frame.getTextoption_parfum().setSelectedItem("");
+        frame.getTextoption_status_pesanan().setSelectedItem("");
+        frame.getTextoption_status_antar().setSelectedItem("");
+        frame.getTextoption_driver().setSelectedItem("");
     }
     
     public void isiTable(){
@@ -61,6 +62,16 @@ public class ControllerAdmin
             b.setNama(frame.getTextfield_nama().getText());
             b.setAlamat(frame.getTextfield_alamat().getText());
             b.setNohp(frame.getTextfield_nohp().getText());
+            Date dateMasuk = frame.getTextfield_tglmasuk().getDate();
+            Date dateKeluar = frame.getTextfield_tglkeluar().getDate();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            String tglMasukStr = (dateMasuk != null) ? sdf.format(dateMasuk) : "";
+            String tglKeluarStr = (dateKeluar != null) ? sdf.format(dateKeluar) : "";
+
+            b.setTgl_masuk(tglMasukStr);
+            b.setTgl_keluar(tglKeluarStr);
             b.setBerat(Float.parseFloat(frame.getTextfield_berat().getText()));
             b.setHarga(Integer.parseInt(frame.getTextfield_harga().getText()));
             b.setParfum(frame.getTextoption_parfum().getSelectedItem().toString());
@@ -72,10 +83,11 @@ public class ControllerAdmin
                 int driverId = driverMap.get(selectedNamaDriver);
                 b.setDriverId(driverId);
 
-                implAdmin.insert(b);  // hanya di sini!
+                implAdmin.insert(b);
                 JOptionPane.showMessageDialog(null, "Simpan Data sukses");
             } else {
-                JOptionPane.showMessageDialog(null, "Driver tidak valid atau belum dimuat.");
+                b.setDriverId(null);
+                implAdmin.insert(b);
             }
         } else {
             JOptionPane.showMessageDialog(frame, "Data Tidak Boleh Kosong");
@@ -101,7 +113,8 @@ public class ControllerAdmin
             implAdmin.getCariId(id); 
             isiTableCariId();
         } else{
-            JOptionPane.showMessageDialog(frame,"Silahkan Pilih Data");
+            isiTable();
+            //JOptionPane.showMessageDialog(frame,"Silahkan Pilih Data");
         }
     }
     
@@ -110,14 +123,45 @@ public class ControllerAdmin
             frame.getTextfield_nama().setText(lb.get(row).getNama());
             frame.getTextfield_alamat().setText(lb.get(row).getAlamat());
             frame.getTextfield_nohp().setText(lb.get(row).getNohp());
-            frame.getTextfield_tglmasuk().setText(lb.get(row).getTgl_masuk());
-            frame.getTextfield_tglkeluar().setText(lb.get(row).getTgl_keluar());
+            String tglMasukStr = lb.get(row).getTgl_masuk();
+            String tglKeluarStr = lb.get(row).getTgl_keluar();
+
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+            if (tglMasukStr != null && !tglMasukStr.isEmpty()) {
+                try {
+                    Date dateMasuk = formatter.parse(tglMasukStr);
+                    frame.getTextfield_tglmasuk().setDate(dateMasuk);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    frame.getTextfield_tglmasuk().setDate(null);
+                }
+            } else {    
+                frame.getTextfield_tglmasuk().setDate(null);
+            }
+
+            if (tglKeluarStr != null && !tglKeluarStr.isEmpty()) {
+                try {
+                    Date dateKeluar = formatter.parse(tglKeluarStr);
+                    frame.getTextfield_tglkeluar().setDate(dateKeluar);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    frame.getTextfield_tglkeluar().setDate(null);
+                }
+            } else {
+                frame.getTextfield_tglkeluar().setDate(null);
+            }
+
+
             frame.getTextfield_berat().setText(String.valueOf(lb.get(row).getBeratAsFloat()));
             frame.getTextfield_harga().setText(String.valueOf(lb.get(row).getHargaAsInteger()));
             frame.getTextoption_parfum().setSelectedItem(lb.get(row).getParfum());
             frame.getTextoption_status_pesanan().setSelectedItem(lb.get(row).getStatus_pesanan());
             frame.getTextoption_status_antar().setSelectedItem(lb.get(row).getStatus_antar());
-            frame.getTextoption_driver().setSelectedItem(lb.get(row).getNama_driver());
+            if (lb.get(row).getNama_driver() != null) {
+                frame.getTextoption_driver().setSelectedItem(lb.get(row).getNama_driver());
+            } else {
+                frame.getTextoption_driver().setSelectedItem("");
+            }
     }
     
     public void update(){
@@ -127,8 +171,16 @@ public class ControllerAdmin
                 b.setNama(frame.getTextfield_nama().getText());
                 b.setAlamat(frame.getTextfield_alamat().getText());
                 b.setNohp(frame.getTextfield_nohp().getText());
-                b.setTgl_masuk(frame.getTextfield_tglmasuk().getText());
-                b.setTgl_keluar(frame.getTextfield_tglkeluar().getText());
+                Date dateMasuk = frame.getTextfield_tglmasuk().getDate();
+                Date dateKeluar = frame.getTextfield_tglkeluar().getDate();
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                String tglMasukStr = (dateMasuk != null) ? sdf.format(dateMasuk) : "";
+                String tglKeluarStr = (dateKeluar != null) ? sdf.format(dateKeluar) : "";
+
+                b.setTgl_masuk(tglMasukStr);
+                b.setTgl_keluar(tglKeluarStr);
                 b.setBerat(Float.parseFloat(frame.getTextfield_berat().getText()));
                 b.setHarga(Integer.parseInt(frame.getTextfield_harga().getText()));
                 b.setParfum(frame.getTextoption_parfum().getSelectedItem().toString());
@@ -141,10 +193,11 @@ public class ControllerAdmin
                     b.setDriverId(driverId);
 
                     implAdmin.update(b);
-                    JOptionPane.showMessageDialog(null, "Simpan Data sukses");
+                    JOptionPane.showMessageDialog(null, "Edit data sukses");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Driver tidak valid atau belum dimuat.");
-                } 
+                    b.setDriverId(null);
+                    implAdmin.update(b);
+                }
             }else {
                     JOptionPane.showMessageDialog(frame, "Pilih data yang akan di ubah");
                 }

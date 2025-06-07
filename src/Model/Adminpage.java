@@ -102,50 +102,56 @@ public class Adminpage
         this.id = id;
     }
 
-    /**
-     * @return the tgl_masuk
-     */
     public String getTgl_masuk() {
         return tgl_masuk;
     }
 
-    /**
-     * @param tgl_masuk the tgl_masuk to set
-     */
-    
     public void setTgl_masuk(String tgl_masuk) {
         try {
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
             Date date = parser.parse(tgl_masuk);
-
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             this.tgl_masuk = formatter.format(date);
         } catch (Exception e) {
             this.tgl_masuk = tgl_masuk;
         }
-}
+    }
 
-    /**
-     * @return the tgl_keluar
-     */
     public String getTgl_keluar() {
         return tgl_keluar;
     }
 
-    /**
-     * @param tgl_keluar the tgl_keluar to set
-     */
     public void setTgl_keluar(String tgl_keluar) {
         try {
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
             Date date = parser.parse(tgl_keluar);
-
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             this.tgl_keluar = formatter.format(date);
         } catch (Exception e) {
-            this.tgl_masuk = tgl_keluar;
+            this.tgl_keluar = tgl_keluar; 
         }
     }
+
+    public java.sql.Date getSqlDateTglMasuk() {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+            Date utilDate = sdf.parse(this.tgl_masuk);
+            return new java.sql.Date(utilDate.getTime());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public java.sql.Date getSqlDateTglKeluar() {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+            Date utilDate = sdf.parse(this.tgl_keluar);
+            return new java.sql.Date(utilDate.getTime());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
     /**
      * @return the berat
