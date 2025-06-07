@@ -20,4 +20,5 @@ public interface IAdmin
         public Map<String, Integer> getDriverNameIdMap();
         public List<Adminpage> getCariId(int id);
         public void update(Adminpage b);
+        public void delete(int id);
     }

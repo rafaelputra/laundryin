@@ -82,14 +82,20 @@
                                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="textoption_status_pesanan" max="32767" attributes="0"/>
-                                  <Component id="textfield_berat" max="32767" attributes="0"/>
-                                  <Component id="textfield_harga" max="32767" attributes="0"/>
-                                  <Component id="textoption_parfum" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="textoption_status_antar" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="textoption_driver" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btn_edit" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="textoption_status_pesanan" max="32767" attributes="0"/>
+                                      <Component id="textfield_berat" max="32767" attributes="0"/>
+                                      <Component id="textfield_harga" max="32767" attributes="0"/>
+                                      <Component id="textoption_parfum" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="textoption_status_antar" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="textoption_driver" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="button_delete" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -98,8 +104,8 @@
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="textfield_id" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Component id="textfield_id" min="-2" pref="83" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -187,6 +193,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btn_submit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="button_delete" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
           </Group>
@@ -425,6 +432,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textfield_id">
+    </Component>
+    <Component class="javax.swing.JButton" name="button_delete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hapus"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_deleteActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

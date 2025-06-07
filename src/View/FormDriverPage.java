@@ -27,8 +27,9 @@ public class FormDriverPage extends javax.swing.JFrame {
         initComponents();
         this.username = username;
 
-        ch = new ControllerDriverpage(this, username); // kalau kamu tetap pakai controller
+        ch = new ControllerDriverpage(this, username);
         loadDriverData();
+        pasangListener();
     }
 
     private void loadDriverData() {
@@ -45,6 +46,20 @@ public class FormDriverPage extends javax.swing.JFrame {
    public JTextField gettextfield_cari() {
     return textfield_cari;
 }
+   private void pasangListener() {
+    tabel_DriverPage.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            int row = tabel_DriverPage.getSelectedRow();
+            if (row != -1) {
+                String id = tabel_DriverPage.getValueAt(row, 0).toString();
+                String status = tabel_DriverPage.getValueAt(row, 5).toString();
+
+                textfield_cari.setText(id);
+                combo_status.setSelectedItem(status);
+            }
+        }
+    });
+}
     /**
      * Creates new form FormLaundryin
      */
@@ -52,7 +67,8 @@ public class FormDriverPage extends javax.swing.JFrame {
         initComponents();
         ch = new ControllerDriverpage(this, username);
         ch.isiTable();
-    }
+        pasangListener();
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,8 +87,8 @@ public class FormDriverPage extends javax.swing.JFrame {
         tabel_DriverPage = new javax.swing.JTable();
         btn_logout_form_admin = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
-        btn_cari2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btn_update = new javax.swing.JButton();
+        combo_status = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(622, 441));
@@ -123,14 +139,19 @@ public class FormDriverPage extends javax.swing.JFrame {
             }
         });
 
-        btn_cari2.setText("Simpan");
-        btn_cari2.addActionListener(new java.awt.event.ActionListener() {
+        btn_update.setText("Update");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cari2ActionPerformed(evt);
+                btn_updateActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELESAI", "BELUM", "SUDAH DIAMBIL" }));
+        combo_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELESAI", "BELUM", "SUDAH DIAMBIL" }));
+        combo_status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_statusActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,11 +166,11 @@ public class FormDriverPage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(textfield_cari, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(combo_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(btn_cari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_cari2)
+                        .addComponent(btn_update)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26))
@@ -169,9 +190,9 @@ public class FormDriverPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_cari2)
+                        .addComponent(btn_update)
                         .addComponent(btn_cari)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(combo_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_refresh))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textfield_cari)
@@ -205,10 +226,36 @@ public class FormDriverPage extends javax.swing.JFrame {
         textfield_cari.setText("");
     }//GEN-LAST:event_btn_refreshActionPerformed
 
-    private void btn_cari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cari2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_cari2ActionPerformed
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        String id = textfield_cari.getText();
+        String status = combo_status.getSelectedItem().toString();
 
+        if (id.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Pilih data dulu dari tabel untuk diupdate!");
+            return;
+        }
+
+        boolean success = ch.updateStatus(id, status);  // panggil controller
+
+        if (success) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Status berhasil diupdate!");
+            ch.isiTable();  // refresh tabel setelah update
+            textfield_cari.setText("");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Update status gagal!");
+        }
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void combo_statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_statusActionPerformed
+
+    public void setStatusCombo(String status) {
+    combo_status.setSelectedItem(status);
+    }
+    public String getSelectedStatus() {
+    return combo_status.getSelectedItem().toString();
+    }
     /**
      * @param args the command line arguments
      */
@@ -246,10 +293,10 @@ public class FormDriverPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cari;
-    private javax.swing.JButton btn_cari2;
     private javax.swing.JButton btn_logout_form_admin;
     private javax.swing.JButton btn_refresh;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btn_update;
+    private javax.swing.JComboBox<String> combo_status;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

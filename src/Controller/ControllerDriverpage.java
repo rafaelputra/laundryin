@@ -51,6 +51,10 @@ public class ControllerDriverpage {
                 JOptionPane.showMessageDialog(frame, "Silahkan masukkan ID pesanan.");
             }
         }
+    
+    public boolean updateStatus(String id, String status) {
+    return implDriverpage.updateStatus(id, status); 
+}
 
     private void isiTableCariId() {
          TabelDriverpage th = new TabelDriverpage(lb);

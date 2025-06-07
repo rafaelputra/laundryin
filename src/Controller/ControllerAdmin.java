@@ -40,6 +40,7 @@ public class ControllerAdmin
     }
     
     public void reset(){
+        frame.getTextfield_id().setText("");
         frame.getTextfield_nama().setText("");
         frame.getTextfield_alamat().setText("");
         frame.getTextfield_nohp().setText("");
@@ -105,17 +106,18 @@ public class ControllerAdmin
     }
     
     public void isiField(int row){
+            frame.getTextfield_id().setText(String.valueOf(lb.get(row).getId()));
             frame.getTextfield_nama().setText(lb.get(row).getNama());
             frame.getTextfield_alamat().setText(lb.get(row).getAlamat());
             frame.getTextfield_nohp().setText(lb.get(row).getNohp());
             frame.getTextfield_tglmasuk().setText(lb.get(row).getTgl_masuk());
             frame.getTextfield_tglkeluar().setText(lb.get(row).getTgl_keluar());
-            frame.getTextfield_berat().setText(lb.get(row).getBerat());
-            frame.getTextfield_harga().setText(lb.get(row).getHarga());
+            frame.getTextfield_berat().setText(String.valueOf(lb.get(row).getBeratAsFloat()));
+            frame.getTextfield_harga().setText(String.valueOf(lb.get(row).getHargaAsInteger()));
             frame.getTextoption_parfum().setSelectedItem(lb.get(row).getParfum());
             frame.getTextoption_status_pesanan().setSelectedItem(lb.get(row).getStatus_pesanan());
             frame.getTextoption_status_antar().setSelectedItem(lb.get(row).getStatus_antar());
-            frame.getTextoption_driver().setSelectedItem(lb.get(row).getDriverId());
+            frame.getTextoption_driver().setSelectedItem(lb.get(row).getNama_driver());
     }
     
     public void update(){
@@ -138,16 +140,23 @@ public class ControllerAdmin
                     int driverId = driverMap.get(selectedNamaDriver);
                     b.setDriverId(driverId);
 
-                    implAdmin.insert(b);
+                    implAdmin.update(b);
                     JOptionPane.showMessageDialog(null, "Simpan Data sukses");
                 } else {
                     JOptionPane.showMessageDialog(null, "Driver tidak valid atau belum dimuat.");
-                }
-                
-                implAdmin.update(b);
-                JOptionPane.showMessageDialog(null, "Update Data sukses");  
-                } else {
+                } 
+            }else {
                     JOptionPane.showMessageDialog(frame, "Pilih data yang akan di ubah");
                 }
             }
+    
+            public void delete(){
+            if (!frame.getTextfield_id().getText().trim().isEmpty()){
+                int id = Integer.parseInt(frame.getTextfield_id().getText());
+                implAdmin.delete(id);
+                JOptionPane.showMessageDialog(null, "Hapus data sukses");
+            } else {
+                JOptionPane.showMessageDialog(frame, "Pilih data yang akan dihapus");
+            }
+        }
     }

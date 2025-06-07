@@ -30,8 +30,9 @@ public class DAOAdmin implements IAdmin
     final String insert = "INSERT INTO pesanan (nama, alamat, no_hp, berat, harga, parfum, status_pesanan, status_antar, driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     final String cariId = "SELECT p.*, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id LIKE ?";
     final String ALogin ="SELECT * FROM admin WHERE username = ? AND password = ?";
-    final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, tgl_masuk=?, tgl_keluar=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
+    final String update = "UPDATE pesanan SET nama=?, alamat=?, no_hp=?, berat=?, harga=?, parfum=?, status_pesanan=?, status_antar=?, driver_id=? WHERE id=?;";
     final String getAllDriver = "SELECT id, nama FROM driver";
+    final String delete = "DELETE FROM pesanan WHERE id=? ;";
     
     public DAOAdmin(){
         connection = KoneksiDB.getConnection();
@@ -149,32 +150,37 @@ public void insert(Adminpage b){
         }
     
     public void update(Adminpage b){
-            PreparedStatement statement = null;
-            try {
-                statement = connection.prepareStatement(update);
-                statement.setString(1, b.getNama());
-                statement.setString(2, b.getAlamat());
-                statement.setString(3, b.getNohp());
-                statement.setString(4, b.getTgl_masuk());
-                statement.setString(4, b.getTgl_keluar());
-                statement.setFloat(5, b.getBeratAsFloat());
-                statement.setInt(6, b.getHargaAsInteger());
-                statement.setString(7, b.getParfum());
-                statement.setString(8, b.getStatus_pesanan());
-                statement.setString(9, b.getStatus_antar());
-                statement.setInt(10, b.getDriverId());
-                statement.setInt(11, b.getId());
-                statement.executeUpdate();
-            } catch (SQLException ex){
-                System.out.println("Berhasil update");
-            } finally{
-                try{
-                    statement.close();
-                } catch (SQLException ex){
-                    System.out.println("Gagal input");
-                }
-            }
+    PreparedStatement statement = null;
+    try {
+        statement = connection.prepareStatement(update);
+        statement.setString(1, b.getNama());
+        statement.setString(2, b.getAlamat());
+        statement.setString(3, b.getNohp());
+        statement.setFloat(4, b.getBeratAsFloat());
+        statement.setInt(5, b.getHargaAsInteger());
+        statement.setString(6, b.getParfum());
+        statement.setString(7, b.getStatus_pesanan());
+        statement.setString(8, b.getStatus_antar());
+        statement.setInt(9, b.getDriverId());
+        statement.setInt(10, b.getId());
+
+        int affectedRows = statement.executeUpdate();
+        if (affectedRows > 0) {
+            System.out.println("Berhasil update");
+        } else {
+            System.out.println("Gagal update: Tidak ada baris yang terpengaruh (id mungkin tidak cocok)");
         }
+    } catch (SQLException ex){
+        System.out.println("Gagal update karena error: " + ex.getMessage());
+    } finally {
+        try {
+            if (statement != null) statement.close();
+        } catch (SQLException ex){
+            System.out.println("Gagal menutup statement: " + ex.getMessage());
+        }
+    }
+}
+
     
         public boolean cekLogin(String username, String password) {
             boolean loginBerhasil = false;
@@ -193,4 +199,23 @@ public void insert(Adminpage b){
             }
             return loginBerhasil;
         }
+        
+                public void delete(int id){
+            PreparedStatement statement = null;
+            try{
+                statement = connection.prepareStatement(delete);
+                
+                statement.setInt(1, id);
+                statement.executeUpdate();
+            } catch (SQLException ex){
+                System.out.println("Berhasil Delete");
+            } finally {
+                try{
+                    statement.close();
+                } catch (SQLException ex){
+                    System.out.println("Gagal Update");
+                }
+            }
+        }
+        
     }

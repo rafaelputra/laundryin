@@ -88,6 +88,7 @@ public class FormAdminPage extends javax.swing.JFrame {
         btn_edit = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         textfield_id = new javax.swing.JTextField();
+        button_delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,6 +200,13 @@ public class FormAdminPage extends javax.swing.JFrame {
 
         jLabel14.setText("ID");
 
+        button_delete.setText("Hapus");
+        button_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_deleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,19 +258,23 @@ public class FormAdminPage extends javax.swing.JFrame {
                                             .addComponent(jLabel12)
                                             .addComponent(jLabel13))
                                         .addGap(4, 4, 4)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textoption_status_pesanan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(textfield_berat)
-                                    .addComponent(textfield_harga)
-                                    .addComponent(textoption_parfum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(textoption_status_antar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(textoption_driver, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_edit))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(textoption_status_pesanan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(textfield_berat)
+                                        .addComponent(textfield_harga)
+                                        .addComponent(textoption_parfum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(textoption_status_antar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(textoption_driver, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn_edit)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(button_delete)))))))
                 .addGap(3, 3, 3)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
+                .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +341,8 @@ public class FormAdminPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_submit)
-                    .addComponent(btn_edit))
+                    .addComponent(btn_edit)
+                    .addComponent(button_delete))
                 .addGap(118, 118, 118))
         );
 
@@ -362,6 +375,13 @@ public class FormAdminPage extends javax.swing.JFrame {
         ca.isiTable();
         ca.reset();
     }//GEN-LAST:event_btn_editActionPerformed
+
+    private void button_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_deleteActionPerformed
+        // TODO add your handling code here:
+        ca.delete();
+        ca.isiTable();
+        ca.reset();
+    }//GEN-LAST:event_button_deleteActionPerformed
 
     public JButton getButtonUpdate(){
         return btn_edit;
@@ -411,6 +431,7 @@ public class FormAdminPage extends javax.swing.JFrame {
     private javax.swing.JButton btn_edit;
     private javax.swing.JButton btn_submit;
     private javax.swing.JButton button_cari;
+    private javax.swing.JButton button_delete;
     private javax.swing.JTable isi_table;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
