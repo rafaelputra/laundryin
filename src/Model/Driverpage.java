@@ -12,6 +12,48 @@ import java.util.Date;
  * @author Asus
  */
 public class Driverpage {
+
+    /**
+     * @return the noHP_driver
+     */
+    public String getNoHP_driver() {
+        return noHP_driver;
+    }
+
+    /**
+     * @param noHP_driver the noHP_driver to set
+     */
+    public void setNoHP_driver(String noHP_driver) {
+        this.noHP_driver = noHP_driver;
+    }
+
+    /**
+     * @return the username
+     */
+    public String getNama() {
+        return nama;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
             /**
          * @return the harga
          */
@@ -165,6 +207,8 @@ public class Driverpage {
             private String nama_driver;
             private String alamat;
             private String noHP;
-
+            private String nama;
+            private String password;
+            private String noHP_driver;
   
 }

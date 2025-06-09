@@ -15,4 +15,9 @@ public interface IDriver {
     public List<Driverpage> getAllJob(String username);
    public List<Driverpage> getCariId(int id,String username);
    boolean updateStatus(String id, String status);
+   public List<Driverpage> getAll();
+   public List<Driverpage> getCariIdDriver(int id);
+   public void insert(Driverpage b);
+   public void delete(int id);
+   public void update(Driverpage b);
 }
