@@ -1,0 +1,1210 @@
+diff --git a/build/built-jar.properties b/build/built-jar.properties
+index 1c47d05..3089e30 100644
+--- a/build/built-jar.properties
++++ b/build/built-jar.properties
+@@ -1,4 +1,4 @@
+-#Sat, 07 Jun 2025 12:05:23 +0700
++#Mon, 09 Jun 2025 18:55:08 +0700
+ 
+ 
+ C\:\\Users\\Asus\\Documents\\laundryin=
+diff --git a/build/classes/View/FormAdminPage$6.class b/build/classes/View/FormAdminPage$6.class
+index 42a79d0..120fd06 100644
+Binary files a/build/classes/View/FormAdminPage$6.class and b/build/classes/View/FormAdminPage$6.class differ
+diff --git a/build/classes/View/FormAdminPage$7.class b/build/classes/View/FormAdminPage$7.class
+index ac1fdb2..8a23468 100644
+Binary files a/build/classes/View/FormAdminPage$7.class and b/build/classes/View/FormAdminPage$7.class differ
+diff --git a/build/classes/View/FormAdminPage$8.class b/build/classes/View/FormAdminPage$8.class
+index 0b8cf95..a729750 100644
+Binary files a/build/classes/View/FormAdminPage$8.class and b/build/classes/View/FormAdminPage$8.class differ
+diff --git a/build/classes/View/FormAdminPage$9.class b/build/classes/View/FormAdminPage$9.class
+index 69fca2b..9588d56 100644
+Binary files a/build/classes/View/FormAdminPage$9.class and b/build/classes/View/FormAdminPage$9.class differ
+diff --git a/build/classes/View/FormAdminPage.form b/build/classes/View/FormAdminPage.form
+index 2f9d6a8..7b57ca3 100644
+--- a/build/classes/View/FormAdminPage.form
++++ b/build/classes/View/FormAdminPage.form
+@@ -23,10 +23,10 @@
+   <Layout>
+     <DimensionLayout dim="0">
+       <Group type="103" groupAlignment="0" attributes="0">
+-          <Group type="102" alignment="1" attributes="0">
+-              <EmptySpace min="-2" max="-2" attributes="0"/>
++          <Group type="102" alignment="0" attributes="0">
++              <EmptySpace max="-2" attributes="0"/>
+               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+-              <EmptySpace pref="320" max="32767" attributes="0"/>
++              <EmptySpace pref="273" max="32767" attributes="0"/>
+           </Group>
+       </Group>
+     </DimensionLayout>
+@@ -35,7 +35,6 @@
+           <Group type="102" alignment="0" attributes="0">
+               <EmptySpace max="-2" attributes="0"/>
+               <Component id="jPanel1" max="32767" attributes="0"/>
+-              <EmptySpace max="-2" attributes="0"/>
+           </Group>
+       </Group>
+     </DimensionLayout>
+@@ -51,118 +50,131 @@
+                       <Group type="102" attributes="0">
+                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="0" attributes="0">
++                              <Component id="jScrollPane1" min="-2" pref="627" max="-2" attributes="0"/>
++                              <Group type="102" attributes="0">
+                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                   <EmptySpace max="-2" attributes="0"/>
+                                   <Component id="textfield_cari" min="-2" pref="150" max="-2" attributes="0"/>
+                                   <EmptySpace max="-2" attributes="0"/>
+                                   <Component id="button_cari" min="-2" max="-2" attributes="0"/>
+                               </Group>
+-                              <Component id="jScrollPane1" alignment="0" min="-2" pref="480" max="-2" attributes="0"/>
+                           </Group>
+-                          <EmptySpace pref="201" max="32767" attributes="0"/>
+                       </Group>
+                       <Group type="102" alignment="1" attributes="0">
+-                          <EmptySpace max="32767" attributes="0"/>
++                          <EmptySpace max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
++                              <Component id="button_reset" min="-2" max="-2" attributes="0"/>
++                              <Group type="102" attributes="0">
+                                   <Component id="btn_submit" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace max="-2" attributes="0"/>
+-                                  <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                   <Component id="button_delete" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
+                               </Group>
+                           </Group>
+                       </Group>
+                   </Group>
++                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                   <Group type="103" groupAlignment="0" attributes="0">
+-                      <Group type="102" alignment="1" attributes="0">
+-                          <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+-                                  <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+-                                      <Component id="textfield_nama" min="-2" pref="150" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
++                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="1" attributes="0">
++                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Component id="textoption_parfum" min="-2" pref="158" max="-2" attributes="0"/>
++                              <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
++                          </Group>
++                          <Group type="102" attributes="0">
++                              <Group type="103" groupAlignment="1" attributes="0">
++                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
++                                  <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
++                                  <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Group type="102" attributes="0">
+                                       <EmptySpace type="separate" max="-2" attributes="0"/>
+-                                      <Component id="textfield_nohp" min="-2" pref="150" max="-2" attributes="0"/>
++                                      <Component id="textfield_tglkeluar" min="-2" max="-2" attributes="0"/>
+                                   </Group>
+                                   <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                                      <Component id="textfield_alamat" min="-2" pref="150" max="-2" attributes="0"/>
++                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
++                                      <Group type="103" groupAlignment="0" attributes="0">
++                                          <Component id="textfield_harga" min="-2" pref="158" max="-2" attributes="0"/>
++                                          <Component id="textfield_berat" min="-2" pref="158" max="-2" attributes="0"/>
++                                      </Group>
+                                   </Group>
+-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                               </Group>
+-                              <Component id="jLabel2" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
++                              <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                           </Group>
+-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+-                          <EmptySpace max="-2" attributes="0"/>
+-                          <Component id="textfield_id" min="-2" pref="83" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                       </Group>
+                       <Group type="102" alignment="1" attributes="0">
+-                          <Group type="103" groupAlignment="1" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="1" attributes="0">
+-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="0" attributes="0">
+-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+-                                      <Group type="103" groupAlignment="1" attributes="0">
+-                                          <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+-                                      </Group>
+-                                  </Group>
+-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                              </Group>
+-                          </Group>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
++                              <Group type="102" attributes="0">
+                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+-                                      <Component id="textoption_status_pesanan" max="32767" attributes="0"/>
+-                                      <Component id="textfield_berat" max="32767" attributes="0"/>
+-                                      <Component id="textfield_harga" max="32767" attributes="0"/>
+-                                      <Component id="textoption_parfum" alignment="0" max="32767" attributes="0"/>
+-                                      <Component id="textoption_status_antar" alignment="0" max="32767" attributes="0"/>
+-                                      <Component id="textoption_driver" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                                      <Group type="102" alignment="0" attributes="0">
++                                          <Group type="103" groupAlignment="0" attributes="0">
++                                              <Component id="jLabel2" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
++                                              <Group type="102" alignment="1" attributes="0">
++                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
++                                              </Group>
++                                          </Group>
++                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
++                                      </Group>
++                                      <Group type="102" attributes="0">
++                                          <Group type="103" groupAlignment="0" attributes="0">
++                                              <Group type="102" alignment="0" attributes="0">
++                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace max="32767" attributes="0"/>
++                                                  <Component id="textfield_nama" min="-2" pref="150" max="-2" attributes="0"/>
++                                              </Group>
++                                              <Group type="102" attributes="0">
++                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
++                                                  <Group type="103" groupAlignment="0" attributes="0">
++                                                      <Component id="textfield_nohp" min="-2" pref="150" max="-2" attributes="0"/>
++                                                      <Component id="textfield_alamat" min="-2" pref="150" max="-2" attributes="0"/>
++                                                  </Group>
++                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++                                              </Group>
++                                          </Group>
++                                          <EmptySpace max="-2" attributes="0"/>
++                                      </Group>
+                                   </Group>
+-                                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
++                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="textfield_id" min="-2" pref="83" max="-2" attributes="0"/>
+                               </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="1" attributes="0">
+-                                      <Component id="textfield_tglmasuk" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="textfield_tglkeluar" min="-2" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
++                              <Group type="102" alignment="0" attributes="0">
++                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="textfield_tglmasuk" min="-2" max="-2" attributes="0"/>
+                               </Group>
+                           </Group>
++                          <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                       </Group>
+                   </Group>
+               </Group>
++              <Group type="102" alignment="1" attributes="0">
++                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++                  <Group type="103" groupAlignment="1" attributes="0">
++                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
++                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
++                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
++                  </Group>
++                  <EmptySpace max="-2" attributes="0"/>
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Component id="textoption_status_pesanan" min="-2" pref="158" max="-2" attributes="0"/>
++                      <Component id="textoption_status_antar" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                      <Component id="textoption_driver" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                  </Group>
++                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
++              </Group>
+           </Group>
+         </DimensionLayout>
+         <DimensionLayout dim="1">
+           <Group type="103" groupAlignment="0" attributes="0">
+-              <Group type="102" alignment="0" attributes="0">
+-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+-                      <Group type="102" attributes="0">
++              <Group type="102" attributes="0">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Group type="102" alignment="0" attributes="0">
+                           <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+@@ -171,90 +183,80 @@
+                           </Group>
+                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                           <Component id="jScrollPane1" min="-2" pref="306" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+-                      </Group>
+-                      <Group type="102" alignment="1" attributes="0">
+-                          <EmptySpace max="32767" attributes="0"/>
+-                          <Component id="button_delete" min="-2" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
++                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="btn_submit" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="button_delete" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+                       </Group>
+-                  </Group>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="btn_submit" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+-                  <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace max="32767" attributes="0"/>
+-              </Group>
+-              <Group type="102" alignment="0" attributes="0">
+-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+-                  <Component id="jLabel2" min="-2" pref="32" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="0" attributes="0">
+                       <Group type="102" alignment="0" attributes="0">
++                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
++                          <Component id="jLabel2" min="-2" pref="32" max="-2" attributes="0"/>
+                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                               <Component id="textfield_nama" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_id" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                           </Group>
+-                      </Group>
+-                      <Group type="102" alignment="0" attributes="0">
+-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+-                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+-                              <Component id="textfield_id" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_alamat" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_nohp" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_tglmasuk" min="-2" pref="115" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Group type="102" alignment="0" attributes="0">
++                                  <Component id="textfield_tglkeluar" min="-2" pref="117" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="textfield_berat" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
++                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="textfield_harga" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                              </Group>
++                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_parfum" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_status_pesanan" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_status_antar" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_driver" alignment="3" min="-2" max="-2" attributes="0"/>
+                           </Group>
+                       </Group>
+                   </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_alamat" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_nohp" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace max="-2" attributes="0"/>
+-                  <Component id="textfield_tglmasuk" min="-2" pref="115" max="-2" attributes="0"/>
+-                  <EmptySpace pref="8" max="32767" attributes="0"/>
+-                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+-                  <Component id="textfield_tglkeluar" min="-2" pref="117" max="-2" attributes="0"/>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="0" attributes="0">
+-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_berat" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_harga" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_parfum" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="textoption_status_pesanan" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_status_antar" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_driver" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
++                  <EmptySpace pref="29" max="32767" attributes="0"/>
+               </Group>
+           </Group>
+         </DimensionLayout>
+@@ -342,6 +344,9 @@
+           </Properties>
+         </Component>
+         <Component class="javax.swing.JTextField" name="textfield_nama">
++          <Events>
++            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_namaActionPerformed"/>
++          </Events>
+         </Component>
+         <Component class="javax.swing.JLabel" name="jLabel9">
+           <Properties>
+@@ -450,6 +455,9 @@
+           </AuxValues>
+         </Component>
+         <Component class="javax.swing.JTextField" name="textfield_alamat">
++          <Events>
++            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_alamatActionPerformed"/>
++          </Events>
+         </Component>
+         <Component class="javax.swing.JLabel" name="jLabel5">
+           <Properties>
+diff --git a/dist/Laundryin.jar b/dist/Laundryin.jar
+index 2258770..30a4e95 100644
+Binary files a/dist/Laundryin.jar and b/dist/Laundryin.jar differ
+diff --git a/nbproject/private/private.properties b/nbproject/private/private.properties
+index 806cef8..a2029f1 100644
+--- a/nbproject/private/private.properties
++++ b/nbproject/private/private.properties
+@@ -12,5 +12,5 @@ user.properties.file=C:\\Users\\Tsaqif\\AppData\\Roaming\\NetBeans\\25\\build.pr
+ user.properties.file=C:\\Users\\Asus\\AppData\\Roaming\\NetBeans\\25\\build.properties
+ >>>>>>> Stashed changes
+ =======
+-user.properties.file=/home/rafaelputra/.netbeans/25/build.properties
++user.properties.file=C:\\Users\\Asus\\AppData\\Roaming\\NetBeans\\25\\build.properties
+ >>>>>>> 41a2d49526c4ffa40918e65300c4fe968b40f73a
+diff --git a/src/Controller/ControllerDriverpage.java b/src/Controller/ControllerDriverpage.java
+index c024e9f..ec89f07 100644
+--- a/src/Controller/ControllerDriverpage.java
++++ b/src/Controller/ControllerDriverpage.java
+@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
+  * @author Asus
+  */
+ public class ControllerDriverpage {
+-      FormDriverPage frame;
++    FormDriverPage frame;
+     IDriver implDriverpage;
+     List<Driverpage> lb;
+     String username; // simpan username di controller
+diff --git a/src/View/FormAdminPage.form b/src/View/FormAdminPage.form
+index 2f9d6a8..7b57ca3 100644
+--- a/src/View/FormAdminPage.form
++++ b/src/View/FormAdminPage.form
+@@ -23,10 +23,10 @@
+   <Layout>
+     <DimensionLayout dim="0">
+       <Group type="103" groupAlignment="0" attributes="0">
+-          <Group type="102" alignment="1" attributes="0">
+-              <EmptySpace min="-2" max="-2" attributes="0"/>
++          <Group type="102" alignment="0" attributes="0">
++              <EmptySpace max="-2" attributes="0"/>
+               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+-              <EmptySpace pref="320" max="32767" attributes="0"/>
++              <EmptySpace pref="273" max="32767" attributes="0"/>
+           </Group>
+       </Group>
+     </DimensionLayout>
+@@ -35,7 +35,6 @@
+           <Group type="102" alignment="0" attributes="0">
+               <EmptySpace max="-2" attributes="0"/>
+               <Component id="jPanel1" max="32767" attributes="0"/>
+-              <EmptySpace max="-2" attributes="0"/>
+           </Group>
+       </Group>
+     </DimensionLayout>
+@@ -51,118 +50,131 @@
+                       <Group type="102" attributes="0">
+                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="0" attributes="0">
++                              <Component id="jScrollPane1" min="-2" pref="627" max="-2" attributes="0"/>
++                              <Group type="102" attributes="0">
+                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                   <EmptySpace max="-2" attributes="0"/>
+                                   <Component id="textfield_cari" min="-2" pref="150" max="-2" attributes="0"/>
+                                   <EmptySpace max="-2" attributes="0"/>
+                                   <Component id="button_cari" min="-2" max="-2" attributes="0"/>
+                               </Group>
+-                              <Component id="jScrollPane1" alignment="0" min="-2" pref="480" max="-2" attributes="0"/>
+                           </Group>
+-                          <EmptySpace pref="201" max="32767" attributes="0"/>
+                       </Group>
+                       <Group type="102" alignment="1" attributes="0">
+-                          <EmptySpace max="32767" attributes="0"/>
++                          <EmptySpace max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
++                              <Component id="button_reset" min="-2" max="-2" attributes="0"/>
++                              <Group type="102" attributes="0">
+                                   <Component id="btn_submit" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace max="-2" attributes="0"/>
+-                                  <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                   <Component id="button_delete" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+-                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
+                               </Group>
+                           </Group>
+                       </Group>
+                   </Group>
++                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                   <Group type="103" groupAlignment="0" attributes="0">
+-                      <Group type="102" alignment="1" attributes="0">
+-                          <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+-                                  <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+-                                      <Component id="textfield_nama" min="-2" pref="150" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
++                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="1" attributes="0">
++                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Component id="textoption_parfum" min="-2" pref="158" max="-2" attributes="0"/>
++                              <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
++                          </Group>
++                          <Group type="102" attributes="0">
++                              <Group type="103" groupAlignment="1" attributes="0">
++                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
++                                  <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
++                                  <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Group type="102" attributes="0">
+                                       <EmptySpace type="separate" max="-2" attributes="0"/>
+-                                      <Component id="textfield_nohp" min="-2" pref="150" max="-2" attributes="0"/>
++                                      <Component id="textfield_tglkeluar" min="-2" max="-2" attributes="0"/>
+                                   </Group>
+                                   <Group type="102" alignment="0" attributes="0">
+-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                                      <Component id="textfield_alamat" min="-2" pref="150" max="-2" attributes="0"/>
++                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
++                                      <Group type="103" groupAlignment="0" attributes="0">
++                                          <Component id="textfield_harga" min="-2" pref="158" max="-2" attributes="0"/>
++                                          <Component id="textfield_berat" min="-2" pref="158" max="-2" attributes="0"/>
++                                      </Group>
+                                   </Group>
+-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                               </Group>
+-                              <Component id="jLabel2" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
++                              <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                           </Group>
+-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+-                          <EmptySpace max="-2" attributes="0"/>
+-                          <Component id="textfield_id" min="-2" pref="83" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                       </Group>
+                       <Group type="102" alignment="1" attributes="0">
+-                          <Group type="103" groupAlignment="1" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="1" attributes="0">
+-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+-                              </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="0" attributes="0">
+-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+-                                      <Group type="103" groupAlignment="1" attributes="0">
+-                                          <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+-                                      </Group>
+-                                  </Group>
+-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                              </Group>
+-                          </Group>
+                           <Group type="103" groupAlignment="0" attributes="0">
+-                              <Group type="102" alignment="1" attributes="0">
++                              <Group type="102" attributes="0">
+                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+-                                      <Component id="textoption_status_pesanan" max="32767" attributes="0"/>
+-                                      <Component id="textfield_berat" max="32767" attributes="0"/>
+-                                      <Component id="textfield_harga" max="32767" attributes="0"/>
+-                                      <Component id="textoption_parfum" alignment="0" max="32767" attributes="0"/>
+-                                      <Component id="textoption_status_antar" alignment="0" max="32767" attributes="0"/>
+-                                      <Component id="textoption_driver" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                                      <Group type="102" alignment="0" attributes="0">
++                                          <Group type="103" groupAlignment="0" attributes="0">
++                                              <Component id="jLabel2" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
++                                              <Group type="102" alignment="1" attributes="0">
++                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
++                                              </Group>
++                                          </Group>
++                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
++                                      </Group>
++                                      <Group type="102" attributes="0">
++                                          <Group type="103" groupAlignment="0" attributes="0">
++                                              <Group type="102" alignment="0" attributes="0">
++                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace max="32767" attributes="0"/>
++                                                  <Component id="textfield_nama" min="-2" pref="150" max="-2" attributes="0"/>
++                                              </Group>
++                                              <Group type="102" attributes="0">
++                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
++                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
++                                                  <Group type="103" groupAlignment="0" attributes="0">
++                                                      <Component id="textfield_nohp" min="-2" pref="150" max="-2" attributes="0"/>
++                                                      <Component id="textfield_alamat" min="-2" pref="150" max="-2" attributes="0"/>
++                                                  </Group>
++                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++                                              </Group>
++                                          </Group>
++                                          <EmptySpace max="-2" attributes="0"/>
++                                      </Group>
+                                   </Group>
+-                                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
++                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="textfield_id" min="-2" pref="83" max="-2" attributes="0"/>
+                               </Group>
+-                              <Group type="102" alignment="1" attributes="0">
+-                                  <Group type="103" groupAlignment="1" attributes="0">
+-                                      <Component id="textfield_tglmasuk" min="-2" max="-2" attributes="0"/>
+-                                      <Component id="textfield_tglkeluar" min="-2" max="-2" attributes="0"/>
+-                                  </Group>
+-                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
++                              <Group type="102" alignment="0" attributes="0">
++                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Component id="textfield_tglmasuk" min="-2" max="-2" attributes="0"/>
+                               </Group>
+                           </Group>
++                          <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                       </Group>
+                   </Group>
+               </Group>
++              <Group type="102" alignment="1" attributes="0">
++                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++                  <Group type="103" groupAlignment="1" attributes="0">
++                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
++                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
++                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
++                  </Group>
++                  <EmptySpace max="-2" attributes="0"/>
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Component id="textoption_status_pesanan" min="-2" pref="158" max="-2" attributes="0"/>
++                      <Component id="textoption_status_antar" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                      <Component id="textoption_driver" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
++                  </Group>
++                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
++              </Group>
+           </Group>
+         </DimensionLayout>
+         <DimensionLayout dim="1">
+           <Group type="103" groupAlignment="0" attributes="0">
+-              <Group type="102" alignment="0" attributes="0">
+-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+-                      <Group type="102" attributes="0">
++              <Group type="102" attributes="0">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Group type="102" alignment="0" attributes="0">
+                           <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+@@ -171,90 +183,80 @@
+                           </Group>
+                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                           <Component id="jScrollPane1" min="-2" pref="306" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+-                      </Group>
+-                      <Group type="102" alignment="1" attributes="0">
+-                          <EmptySpace max="32767" attributes="0"/>
+-                          <Component id="button_delete" min="-2" max="-2" attributes="0"/>
+-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
++                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="btn_submit" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="button_delete" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+                       </Group>
+-                  </Group>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="btn_submit" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+-                  <Component id="button_reset" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace max="32767" attributes="0"/>
+-              </Group>
+-              <Group type="102" alignment="0" attributes="0">
+-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+-                  <Component id="jLabel2" min="-2" pref="32" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="0" attributes="0">
+                       <Group type="102" alignment="0" attributes="0">
++                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
++                          <Component id="jLabel2" min="-2" pref="32" max="-2" attributes="0"/>
+                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                               <Component id="textfield_nama" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_id" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                           </Group>
+-                      </Group>
+-                      <Group type="102" alignment="0" attributes="0">
+-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                           <Group type="103" groupAlignment="3" attributes="0">
+-                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+-                              <Component id="textfield_id" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_alamat" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_nohp" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
++                              <Component id="textfield_tglmasuk" min="-2" pref="115" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Group type="102" alignment="0" attributes="0">
++                                  <Component id="textfield_tglkeluar" min="-2" pref="117" max="-2" attributes="0"/>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="textfield_berat" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
++                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                                  <EmptySpace type="separate" max="-2" attributes="0"/>
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="textfield_harga" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                              </Group>
++                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_parfum" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_status_pesanan" alignment="3" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="0" attributes="0">
++                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_status_antar" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="3" attributes="0">
++                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
++                              <Component id="textoption_driver" alignment="3" min="-2" max="-2" attributes="0"/>
+                           </Group>
+                       </Group>
+                   </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_alamat" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_nohp" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace max="-2" attributes="0"/>
+-                  <Component id="textfield_tglmasuk" min="-2" pref="115" max="-2" attributes="0"/>
+-                  <EmptySpace pref="8" max="32767" attributes="0"/>
+-                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+-                  <Component id="textfield_tglkeluar" min="-2" pref="117" max="-2" attributes="0"/>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="0" attributes="0">
+-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_berat" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textfield_harga" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_parfum" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="textoption_status_pesanan" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_status_antar" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+-                  <Group type="103" groupAlignment="3" attributes="0">
+-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+-                      <Component id="textoption_driver" alignment="3" min="-2" max="-2" attributes="0"/>
+-                  </Group>
+-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
++                  <EmptySpace pref="29" max="32767" attributes="0"/>
+               </Group>
+           </Group>
+         </DimensionLayout>
+@@ -342,6 +344,9 @@
+           </Properties>
+         </Component>
+         <Component class="javax.swing.JTextField" name="textfield_nama">
++          <Events>
++            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_namaActionPerformed"/>
++          </Events>
+         </Component>
+         <Component class="javax.swing.JLabel" name="jLabel9">
+           <Properties>
+@@ -450,6 +455,9 @@
+           </AuxValues>
+         </Component>
+         <Component class="javax.swing.JTextField" name="textfield_alamat">
++          <Events>
++            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_alamatActionPerformed"/>
++          </Events>
+         </Component>
+         <Component class="javax.swing.JLabel" name="jLabel5">
+           <Properties>
+diff --git a/src/View/FormAdminPage.java b/src/View/FormAdminPage.java
+index 8acc0b8..e61ed6e 100644
+--- a/src/View/FormAdminPage.java
++++ b/src/View/FormAdminPage.java
+@@ -147,6 +147,12 @@ public class FormAdminPage extends javax.swing.JFrame {
+ 
+         jLabel3.setText("Nama");
+ 
++        textfield_nama.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                textfield_namaActionPerformed(evt);
++            }
++        });
++
+         jLabel9.setText("Harga");
+ 
+         jLabel8.setText("Tgl keluar");
+@@ -181,6 +187,12 @@ public class FormAdminPage extends javax.swing.JFrame {
+ 
+         jLabel4.setText("Alamat");
+ 
++        textfield_alamat.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                textfield_alamatActionPerformed(evt);
++            }
++        });
++
+         jLabel5.setText("No HP");
+ 
+         button_reset.setText("Reset");
+@@ -199,87 +211,96 @@ public class FormAdminPage extends javax.swing.JFrame {
+                     .addGroup(jPanel1Layout.createSequentialGroup()
+                         .addGap(18, 18, 18)
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                 .addComponent(jLabel1)
+                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                 .addComponent(textfield_cari, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+-                                .addComponent(button_cari))
+-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE))
++                                .addComponent(button_cari))))
+                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                        .addContainerGap()
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                            .addComponent(button_reset)
++                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                 .addComponent(btn_submit)
+-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+-                                .addComponent(btn_edit)
+-                                .addGap(103, 103, 103))
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                                .addGap(18, 18, 18)
+                                 .addComponent(button_delete)
+-                                .addGap(125, 125, 125))
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                                .addComponent(button_reset)
+-                                .addGap(140, 140, 140)))))
++                                .addGap(18, 18, 18)
++                                .addComponent(btn_edit)))))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                            .addComponent(jLabel10)
++                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                            .addComponent(textoption_parfum, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
++                            .addGap(278, 278, 278))
++                        .addGroup(jPanel1Layout.createSequentialGroup()
++                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
++                                .addComponent(jLabel8)
++                                .addComponent(jLabel9)
++                                .addComponent(jLabel7))
++                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                 .addGroup(jPanel1Layout.createSequentialGroup()
+-                                    .addComponent(jLabel3)
+                                     .addGap(18, 18, 18)
+-                                    .addComponent(textfield_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                                .addGroup(jPanel1Layout.createSequentialGroup()
+-                                    .addComponent(jLabel5)
+-                                    .addGap(18, 18, 18)
+-                                    .addComponent(textfield_nohp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
++                                    .addComponent(textfield_tglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                 .addGroup(jPanel1Layout.createSequentialGroup()
+-                                    .addComponent(jLabel4)
+-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                                    .addComponent(textfield_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                                .addComponent(jLabel6))
+-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                        .addGap(3, 3, 3)
+-                        .addComponent(jLabel14)
+-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+-                        .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                        .addGap(14, 14, 14))
++                                    .addGap(6, 6, 6)
++                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                                        .addComponent(textfield_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                        .addComponent(textfield_berat, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
++                            .addGap(203, 203, 203)))
+                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+-                            .addGroup(jPanel1Layout.createSequentialGroup()
+-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+-                                    .addComponent(jLabel11)
+-                                    .addComponent(jLabel12)
+-                                    .addComponent(jLabel13))
+-                                .addGap(4, 4, 4))
+-                            .addGroup(jPanel1Layout.createSequentialGroup()
+-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                                    .addComponent(jLabel8)
+-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+-                                        .addComponent(jLabel7)
+-                                        .addComponent(jLabel9)
+-                                        .addComponent(jLabel10)))
+-                                .addGap(18, 18, 18)))
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+-                                    .addComponent(textoption_status_pesanan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                                    .addComponent(textfield_berat)
+-                                    .addComponent(textfield_harga)
+-                                    .addComponent(textoption_parfum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                                    .addComponent(textoption_status_antar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                                    .addComponent(textoption_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                                .addGap(112, 112, 112))
+-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+-                                    .addComponent(textfield_tglmasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                                    .addComponent(textfield_tglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                                .addGap(58, 58, 58))))))
++                                    .addGroup(jPanel1Layout.createSequentialGroup()
++                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                                                .addComponent(jLabel4)
++                                                .addGap(168, 168, 168)))
++                                        .addGap(13, 13, 13))
++                                    .addGroup(jPanel1Layout.createSequentialGroup()
++                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                                            .addGroup(jPanel1Layout.createSequentialGroup()
++                                                .addComponent(jLabel3)
++                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                                                .addComponent(textfield_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
++                                            .addGroup(jPanel1Layout.createSequentialGroup()
++                                                .addComponent(jLabel5)
++                                                .addGap(27, 27, 27)
++                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                                                    .addComponent(textfield_nohp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                                    .addComponent(textfield_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
++                                                .addGap(0, 0, Short.MAX_VALUE)))
++                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
++                                .addComponent(jLabel14)
++                                .addGap(18, 18, 18)
++                                .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
++                            .addGroup(jPanel1Layout.createSequentialGroup()
++                                .addComponent(jLabel6)
++                                .addGap(18, 18, 18)
++                                .addComponent(textfield_tglmasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
++                        .addGap(164, 164, 164))))
++            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
++                .addGap(0, 0, Short.MAX_VALUE)
++                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
++                    .addComponent(jLabel13)
++                    .addComponent(jLabel12)
++                    .addComponent(jLabel11))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(textoption_status_pesanan, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(textoption_status_antar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(textoption_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addGap(278, 278, 278))
+         );
+         jPanel1Layout.setVerticalGroup(
+             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+             .addGroup(jPanel1Layout.createSequentialGroup()
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
++                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                     .addGroup(jPanel1Layout.createSequentialGroup()
+                         .addGap(73, 73, 73)
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+@@ -288,89 +309,80 @@ public class FormAdminPage extends javax.swing.JFrame {
+                             .addComponent(textfield_cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                         .addGap(18, 18, 18)
+                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                        .addGap(97, 97, 97))
+-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                        .addComponent(button_delete)
+-                        .addGap(29, 29, 29)))
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(btn_submit)
+-                    .addComponent(btn_edit))
+-                .addGap(26, 26, 26)
+-                .addComponent(button_reset)
+-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+-            .addGroup(jPanel1Layout.createSequentialGroup()
+-                .addGap(32, 32, 32)
+-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                        .addGap(52, 52, 52)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(btn_submit)
++                            .addComponent(button_delete)
++                            .addComponent(btn_edit))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                        .addComponent(button_reset))
+                     .addGroup(jPanel1Layout.createSequentialGroup()
++                        .addGap(32, 32, 32)
++                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                             .addComponent(jLabel3)
+-                            .addComponent(textfield_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+-                    .addGroup(jPanel1Layout.createSequentialGroup()
+-                        .addGap(4, 4, 4)
++                            .addComponent(textfield_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                            .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                            .addComponent(jLabel14))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                            .addComponent(jLabel14)
+-                            .addComponent(textfield_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel4)
+-                    .addComponent(textfield_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel5)
+-                    .addComponent(textfield_nohp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                .addComponent(jLabel6)
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+-                .addComponent(textfield_tglmasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+-                .addComponent(jLabel8)
+-                .addGap(15, 15, 15)
+-                .addComponent(textfield_tglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-                    .addComponent(jLabel7)
+-                    .addComponent(textfield_berat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel9)
+-                    .addComponent(textfield_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addGap(18, 18, 18)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel10)
+-                    .addComponent(textoption_parfum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addGap(18, 18, 18)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(textoption_status_pesanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                    .addComponent(jLabel11))
+-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel12)
+-                    .addComponent(textoption_status_antar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addGap(13, 13, 13)
+-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+-                    .addComponent(jLabel13)
+-                    .addComponent(textoption_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+-                .addGap(44, 44, 44))
++                            .addComponent(jLabel4)
++                            .addComponent(textfield_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(jLabel5)
++                            .addComponent(textfield_nohp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                            .addComponent(jLabel6)
++                            .addComponent(textfield_tglmasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                            .addGroup(jPanel1Layout.createSequentialGroup()
++                                .addComponent(textfield_tglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                .addGap(18, 18, 18)
++                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                                    .addComponent(textfield_berat, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                    .addComponent(jLabel7))
++                                .addGap(18, 18, 18)
++                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                                    .addComponent(textfield_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                                    .addComponent(jLabel9)))
++                            .addComponent(jLabel8))
++                        .addGap(18, 18, 18)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(jLabel10)
++                            .addComponent(textoption_parfum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addGap(18, 18, 18)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(jLabel11)
++                            .addComponent(textoption_status_pesanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addGap(18, 18, 18)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                            .addComponent(jLabel12)
++                            .addComponent(textoption_status_antar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                        .addGap(18, 18, 18)
++                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(jLabel13)
++                            .addComponent(textoption_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
++                .addContainerGap(29, Short.MAX_VALUE))
+         );
+ 
+         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+         getContentPane().setLayout(layout);
+         layout.setHorizontalGroup(
+             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
++            .addGroup(layout.createSequentialGroup()
+                 .addContainerGap()
+                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+-                .addContainerGap(320, Short.MAX_VALUE))
++                .addContainerGap(273, Short.MAX_VALUE))
+         );
+         layout.setVerticalGroup(
+             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+             .addGroup(layout.createSequentialGroup()
+                 .addContainerGap()
+-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+-                .addContainerGap())
++                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+         );
+ 
+         pack();
+@@ -415,6 +427,14 @@ public class FormAdminPage extends javax.swing.JFrame {
+         ca.reset();
+     }//GEN-LAST:event_button_resetActionPerformed
+ 
++    private void textfield_namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_namaActionPerformed
++        // TODO add your handling code here:
++    }//GEN-LAST:event_textfield_namaActionPerformed
++
++    private void textfield_alamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_alamatActionPerformed
++        // TODO add your handling code here:
++    }//GEN-LAST:event_textfield_alamatActionPerformed
++
+     public JButton getButtonUpdate(){
+         return btn_edit;
+     }

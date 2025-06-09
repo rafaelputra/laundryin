@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Asus
  */
 public class ControllerDriverpage {
-      FormDriverPage frame;
+    FormDriverPage frame;
     IDriver implDriverpage;
     List<Driverpage> lb;
     String username; // simpan username di controller
