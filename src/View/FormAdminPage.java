@@ -451,6 +451,7 @@ public class FormAdminPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormManageDriver formManage = new FormManageDriver();
         formManage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_button_manageActionPerformed
 
     public JButton getButtonUpdate(){

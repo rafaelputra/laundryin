@@ -61,7 +61,7 @@ public class DriverDAO  implements IDriver{
     public void insert(Driverpage b){
     PreparedStatement statement = null;
     try {
-        statement = connection.prepareStatement(insert);
+        statement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, b.getNama());
         statement.setString(2, b.getPassword());
         statement.setString(3, b.getNoHP_driver());
