@@ -14,6 +14,20 @@ import java.util.Date;
 public class Driverpage {
 
     /**
+     * @return the Motor
+     */
+    public String getMotor() {
+        return Motor;
+    }
+
+    /**
+     * @param Motor the Motor to set
+     */
+    public void setMotor(String Motor) {
+        this.Motor = Motor;
+    }
+
+    /**
      * @return the noHP_driver
      */
     public String getNoHP_driver() {
@@ -210,5 +224,5 @@ public class Driverpage {
             private String nama;
             private String password;
             private String noHP_driver;
-  
+            private String Motor;
 }

@@ -69,6 +69,7 @@ public class ControllerDriverpage {
             frame2.gettextfield_nama().setText(lb.get(row).getNama());
             frame2.gettextfield_password().setText(lb.get(row).getPassword());
             frame2.gettextfield_nohp().setText(lb.get(row).getNoHP_driver());
+            frame2.gettextfield_motor().setText(lb.get(row).getMotor());
         }
         
         public void insert(){   
@@ -77,6 +78,7 @@ public class ControllerDriverpage {
             b.setNama(frame2.gettextfield_nama().getText());
             b.setPassword(frame2.gettextfield_password().getText());
             b.setNoHP_driver(frame2.gettextfield_nohp().getText());
+            b.setMotor(frame2.gettextfield_motor().getText());
             implDriverpage.insert(b);
             JOptionPane.showMessageDialog(null, "Simpan Data sukses");
         } else {
@@ -91,6 +93,7 @@ public class ControllerDriverpage {
                 b.setPassword(frame2.gettextfield_password().getText());
                 b.setNoHP_driver(frame2.gettextfield_nohp().getText());
                 b.setId(Integer.parseInt(frame2.gettextfield_id().getText()));
+                b.setMotor(frame2.gettextfield_motor().getText());
                 implDriverpage.update(b);
                 JOptionPane.showMessageDialog(frame2, "Simpan data sukses");
             }else {
