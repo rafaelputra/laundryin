@@ -20,7 +20,7 @@ public class TabelManageDriver extends AbstractTableModel
         }
         
         public int getColumnCount(){
-            return 4;
+            return 5;
         }
         
         public int getRowCount(){
@@ -37,6 +37,8 @@ public class TabelManageDriver extends AbstractTableModel
                     return "Password";
                 case 3:
                     return "No HP";
+                case 4:
+                       return "Motor";
                 default:
                     return null;
             }
@@ -53,6 +55,8 @@ public class TabelManageDriver extends AbstractTableModel
                     return lb.get(row).getPassword();
                 case 3:
                     return lb.get(row).getNoHP_driver();
+                case 4:
+                      return lb.get(row).getMotor();
                 default:
                     return null;
             }       

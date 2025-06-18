@@ -23,10 +23,10 @@ public class DriverDAO  implements IDriver{
       final String getCariId = "SELECT p.id, p.tgl_masuk, p.tgl_keluar, p.berat, p.harga, p.status_pesanan, p.status_antar, p.alamat, p.no_hp, d.nama AS nama_driver FROM pesanan p LEFT JOIN driver d ON p.driver_id = d.id WHERE p.id = ? AND d.nama = ?";
       final String updateStatus = "UPDATE pesanan SET status_pesanan = ? WHERE id = ?";
       final String select = "SELECT * FROM driver;";
-      final String cariIdDriver = "SELECT id, nama, password, no_hp FROM driver WHERE id LIKE ?;";
-      final String insert = "INSERT INTO driver (nama, password, no_hp) VALUES (?, ?, ?);";
+      final String cariIdDriver = "SELECT id, nama, password, no_hp, motor FROM driver WHERE id LIKE ?;";
+      final String insert = "INSERT INTO driver (nama, password, no_hp, motor) VALUES (?, ?, ?, ?);";
       final String delete = "DELETE FROM driver WHERE id=? ;";
-      final String update = "UPDATE driver SET nama=?, password=?, no_hp=? WHERE id=? ;";
+      final String update = "UPDATE driver SET nama=?, password=?, no_hp=?, motor=? WHERE id=? ;";
 
 
     public DriverDAO() {
@@ -40,7 +40,8 @@ public class DriverDAO  implements IDriver{
         statement.setString(1, b.getNama());
         statement.setString(2, b.getPassword());
         statement.setString(3, b.getNoHP_driver());
-        statement.setInt(4, b.getId());
+        statement.setString(4, b.getMotor());
+        statement.setInt(5, b.getId());
         int affectedRows = statement.executeUpdate();
         if (affectedRows > 0) {
             System.out.println("Berhasil update");
@@ -65,6 +66,7 @@ public class DriverDAO  implements IDriver{
         statement.setString(1, b.getNama());
         statement.setString(2, b.getPassword());
         statement.setString(3, b.getNoHP_driver());
+        statement.setString(4, b.getMotor());
         statement.executeUpdate();
         ResultSet rs = statement.getGeneratedKeys();
         while (rs.next()){
@@ -115,6 +117,7 @@ public class DriverDAO  implements IDriver{
                     b.setNama(rs.getString("nama"));
                     b.setPassword(rs.getString("password"));
                     b.setNoHP_driver(rs.getString("no_hp"));
+                    b.setMotor(rs.getString("motor"));
                     lb.add(b);
                 }
             } catch (SQLException ex){
@@ -136,6 +139,7 @@ public class DriverDAO  implements IDriver{
                     b.setNama(rs.getString("nama"));
                     b.setPassword(rs.getString("password"));
                     b.setNoHP_driver(rs.getString("no_hp"));
+                    b.setMotor(rs.getString("motor"));
                     lb.add(b);
                 }
             } catch (SQLException ex){
